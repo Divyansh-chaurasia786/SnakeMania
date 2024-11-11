@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+.body {
+    background: url("../img/bg.jpg");
+    min-height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+
+.score-container {
+    position: absolute;
+    top: 2vh;
+    right: 5vw;
+    text-align: right;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#scoreBox {
+    font-size: clamp(20px, 5vw, 39px);
+    font-weight: bold;
+    margin-bottom: 1vh;
+    color: #333;
+}
+
+#hiscoreBox {
+    font-size: clamp(20px, 5vw, 39px);
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1vh;
+}
+
+#speedBox {
+    font-size: clamp(16px, 4vw, 24px);
+    font-weight: bold;
+    color: #333;
+}
+
+#board {
+    background: linear-gradient(rgb(170, 236, 170), rgb(236, 236, 167));
+    width: min(90vmin, 600px);
+    height: min(90vmin, 600px);
+    border: 2px solid black;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(18, 1fr);
+    margin: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.head {
+    background: linear-gradient(rgb(240, 124, 124), rgb(228, 228, 129));
+    border: 2px solid rgb(34, 4, 34);
+    transform: scale(1.02);
+    border-radius: 9px;
+}
+
+.snake {
+    background-color: purple;
+    border: .25vmin solid white;
+    border-radius: 12px;
+}
+
+.food {
+    background: linear-gradient(red, purple);
+    border: .25vmin solid black;
+    border-radius: 8px;
+}
+
+.mobile-instructions {
+    display: none;
+    position: absolute;
+    bottom: 5vh;
+    text-align: center;
+    width: 100%;
+    font-size: clamp(16px, 4vw, 24px);
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    z-index: 1;
+}
+
+@media (hover: none) {
+    .mobile-instructions {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .score-container {
+        top: 1vh;
+        right: 3vw;
+    }
+
+    #board {
+        width: 85vmin;
+        height: 85vmin;
+    }
+}
